@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   {{#each users}}
+   <section>
+        Dear {{FirstName}}
+   </section>
+   <br>
+   <section>
+        The <strong>{{BookCount}} books</strong> you took at the Library is due in 
+        <strong>{{DayCount}} days</strong>
+   </section>
+   <br>
+   {{#if notLate}}
+   <section>
+        Please do well to return the books to us in the <strong>{{DayCount}}
+            days</strong> 
+   </section>
+   {{else}}
+   <section>
+       <strong>Please return the books urgently!</strong>   
+   {{/if}}
+</section>
+<br>
+<hr>
+   {{/each}}
+
+   <h1>Late Books</h1>
+   {{#each users}}
+   
+   {{#if notLate}}   
+   {{else}}
+   <section>
+        Dear {{FirstName}}
+    </section>
+    <br>
+    <section>
+    The <strong>{{BookCount}} books</strong> you took at the Library is due in 
+    <strong>{{DayCount}} days</strong>
+    </section>
+    <br>
+   <section>
+       <strong>Please return the books urgently!</strong>   
+   {{/if}}
+    </section>
+    <br>
+    <hr>
+   {{/each}}
+</body> 
+</html>
